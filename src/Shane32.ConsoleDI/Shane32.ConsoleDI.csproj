@@ -2,6 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Description>
+      C# library to easily create console applications that are run via dependency injection, with support for user secrets and EF Core migrations
+    </Description>
   </PropertyGroup>
 
   <ItemGroup>
