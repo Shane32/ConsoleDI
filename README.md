@@ -109,3 +109,59 @@ The order of priority is configured as follows (last has highest priority):
 3. User secrets
 4. Environment variables
 5. Command-line arguments
+
+If you have multiple programs within your console app, you can also set up a menu system like this:
+
+```csharp
+using System;
+using System.Threading.Tasks;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Shane32.ConsoleDI;
+
+namespace ExampleConsoleApp2
+{
+    class Program
+    {
+        static async Task Main(string[] args)
+            => await ConsoleHost.RunMainMenu(args, CreateHostBuilder, "Demonstration console app with menu");
+
+        // this function is necessary for Entity Framework Core tools to perform migrations, etc
+        // do not change signature!!
+        public static IHostBuilder CreateHostBuilder(string[] args)
+            => ConsoleHost.CreateHostBuilder(args, ConfigureServices);
+
+        private static void ConfigureServices(HostBuilderContext context, IServiceCollection services)
+        {
+            // register your Entity Framework data contexts here
+
+            services.AddScoped<Random>(_ => {
+                var seedStr = context.Configuration["Config:Seed"];
+                if (int.TryParse(seedStr, out int seed)) {
+                    return new Random(seed);
+                }
+                return new Random();
+            });
+        }
+
+    }
+
+    [MainMenu("App1")]
+    class App1 : IMenuOption
+    {
+        public async Task RunAsync()
+        {
+            Console.WriteLine("This is my first program");
+        }
+    }
+
+    [MainMenu("App2")]
+    class App2 : IMenuOption
+    {
+        public async Task RunAsync()
+        {
+            Console.WriteLine("This is an alternate program");
+        }
+    }
+}
+```

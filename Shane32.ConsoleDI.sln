@@ -16,7 +16,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shane32.ConsoleDI", "src\Shane32.ConsoleDI\Shane32.ConsoleDI.csproj", "{A9DD16A8-DEF6-453E-B5D5-CE7B4A397E3F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleConsoleApp", "src\ExampleConsoleApp\ExampleConsoleApp.csproj", "{54493642-9A30-4416-92DA-00257B14C218}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExampleConsoleApp", "src\ExampleConsoleApp\ExampleConsoleApp.csproj", "{54493642-9A30-4416-92DA-00257B14C218}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExampleConsoleApp2", "src\ExampleConsoleApp2\ExampleConsoleApp2.csproj", "{236194E6-B103-4B44-A970-39A4E61D30E0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,6 +34,10 @@ Global
 		{54493642-9A30-4416-92DA-00257B14C218}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54493642-9A30-4416-92DA-00257B14C218}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{54493642-9A30-4416-92DA-00257B14C218}.Release|Any CPU.Build.0 = Release|Any CPU
+		{236194E6-B103-4B44-A970-39A4E61D30E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{236194E6-B103-4B44-A970-39A4E61D30E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{236194E6-B103-4B44-A970-39A4E61D30E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{236194E6-B103-4B44-A970-39A4E61D30E0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
